@@ -6,6 +6,7 @@
 #include "TH2F.h"
 #include "TCanvas.h"
 
+// Toroidal boundaries
 int getBinContent(TH2F *h, int i, int j)
 {
   int xMax=h->GetNbinsX();
@@ -19,6 +20,7 @@ int getBinContent(TH2F *h, int i, int j)
   return h->GetBinContent(i, j);
 }
 
+// Evolve the board by 1 timestep. Make sure order of scanning doesn't matter.
 void evolve(TH2F *h)
 {
   TH2F *h_temp=(TH2F*)h->Clone();
@@ -58,6 +60,7 @@ void evolve(TH2F *h)
   delete h_temp;
 }
 
+// The main program
 void GameOfLife()
 {
   unsigned int xMax=100, yMax=100;
