@@ -6,14 +6,6 @@
 #include "TH2F.h"
 #include "TCanvas.h"
 
-std::string itoa(int i) 
-{
-  char res[10];
-  sprintf(res, "%d", i);
-  std::string ret(res);
-  return ret;
-}
-
 int getBinContent(TH2F *h, int i, int j)
 {
   int xMax=h->GetNbinsX();
